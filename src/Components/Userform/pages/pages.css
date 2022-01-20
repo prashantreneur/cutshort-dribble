@@ -1,0 +1,17 @@
+.content {
+    /* background-color: blueviolet; */
+    width: 50%;
+    margin: auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 2rem;
+}
