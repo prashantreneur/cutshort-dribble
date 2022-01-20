@@ -10,8 +10,8 @@ const Welcome = (props) => {
                 <h1 >Welcome! First thing first...</h1>
                 <p>You can always change them later</p>
             </div>
-            <Input label='Full Name' />
-            <Input label='Last Name' />
+            <Input label='Full Name' onChange={props.handleChange} name='fullName' value={props.values.firstName} />
+            <Input label='Display Name' onChange={props.handleChange} name='displayName' value={props.values.displayName} />
             <Button handleClick={props.nextStep}>Create Workspace</Button>
         </div>
     )

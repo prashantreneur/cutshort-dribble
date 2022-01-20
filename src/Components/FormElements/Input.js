@@ -6,7 +6,7 @@ const Input = ({ value, label, name, placeholder, type, onChange }) => {
         <div className={classes.container}>
             <label htmlFor={name}>{label}</label>
             <input className={classes.input}
-                type={type}
+                type='text'
                 value={value}
                 name={name}
                 placeholder={placeholder}

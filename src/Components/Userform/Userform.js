@@ -11,7 +11,7 @@ class Userform extends Component {
 
     state = {
         step: 1,
-        fullname: '',
+        fullName: '',
         displayName: '',
         workspaceName: '',
         workspaceUrl: '',
@@ -26,38 +26,45 @@ class Userform extends Component {
         });
     };
 
-    //Handle the Innput Change
-    handleChange = input => e => {
-        this.setState({ [input]: e.target.value });
+    //Handle the Input Change
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+
     };
 
 
     render() {
         const { step } = this.state;
+        const { fullName, displayName, workspaceName, workspaceUrl, workspaceUse } = this.state;
+        const values = { fullName, displayName, workspaceName, workspaceUrl, workspaceUse };
         let page = null;
+
         switch (step) {
             case 1:
                 page = <Welcome
                     nextStep={this.nextStep}
+                    handleChange={this.handleChange}
+                    values={values}
                 />
                 break;
 
             case 2:
-
                 page = <Workspace
                     nextStep={this.nextStep}
+                    handleChange={this.handleChange}
+                    values={values}
                 />
                 break;
 
             case 3:
-
                 page = <Planning
                     nextStep={this.nextStep}
+                    handleChange={this.handleChange}
+                    values={values}
                 />
                 break;
 
             case 4:
-
                 page = <Success
                     nextStep={this.nextStep}
                 />
@@ -72,7 +79,7 @@ class Userform extends Component {
                     <img src={eden} alt="" />
                 </div>
                 <div className="text-center">
-                    <Stepbar />
+                    <Stepbar step={this.state.step} />
                 </div>
 
                 <div className='card-body'>

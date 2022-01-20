@@ -7,10 +7,11 @@ const Workspace = (props) => {
     return (
         <div className='content'>
             <div className="text-center mt-5 mb-5">
-                <h1>Workspace</h1>
+                <h2>Let's set up a home for all your work</h2>
+                <p>You can always create another workspace later</p>
             </div>
-            <Input label='Workspace Name' />
-            <Input label='Workspace URL' />
+            <Input label='Workspace Name' onChange={props.handleChange} name='workspaceName' value={props.values.workspaceName} />
+            <Input label='Workspace URL' onChange={props.handleChange} name='workspaceUrl' value={props.values.workspaceUrl} />
             <Button handleClick={props.nextStep}>Create WorkSpace</Button>
         </div>
     )
